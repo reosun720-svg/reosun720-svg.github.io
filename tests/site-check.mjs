@@ -10,13 +10,14 @@ const html = await read('index.html');
 const css = await read('styles.css');
 const appAds = await read('app-ads.txt');
 const robots = await read('robots.txt');
-const logo = await stat(resolve(root, 'assets/vavav-logo.png'));
+const logo = await stat(resolve(root, 'assets/vavav-logo.jpg'));
 
 assert.match(html, /<html lang="ko">/);
 assert.match(html, /<header[\s>]/);
 assert.match(html, /<main[\s>]/);
 assert.match(html, /<footer[\s>]/);
-assert.match(html, /assets\/vavav-logo\.png/);
+assert.match(html, /assets\/vavav-logo\.jpg/);
+assert.doesNotMatch(html, /assets\/vavav-logo\.png/);
 assert.match(html, /alt="VAVAV GAME"/);
 assert.match(html, /PUZZLOA/);
 assert.match(html, /mailto:ov0vavav0vo@gmail\.com/);
