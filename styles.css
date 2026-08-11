@@ -1,0 +1,138 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #000;
+  color: #fff;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+.site-header,
+main,
+footer {
+  width: min(100% - 40px, 920px);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: grid;
+  place-items: center;
+  min-height: min(70vh, 720px);
+  padding-block: 64px 48px;
+}
+
+.brand {
+  position: relative;
+  display: block;
+  width: min(78vw, 480px);
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-fallback {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+main { border-top: 1px solid #2b2b2b; }
+
+section {
+  padding-block: clamp(64px, 10vw, 120px);
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #9b9b9b;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+h1,
+h2 {
+  max-width: 760px;
+  margin: 0 0 24px;
+  color: #fff;
+  font-weight: 650;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.3rem, 7vw, 5.6rem); }
+h2 { font-size: clamp(2rem, 5vw, 4rem); }
+
+section > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 12px 0 0;
+  color: #c9c9c9;
+  font-size: clamp(1rem, 2vw, 1.16rem);
+}
+
+.contact {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  gap: 14px;
+}
+
+.contact .eyebrow,
+.contact h2 { margin-bottom: 4px; }
+
+.contact a {
+  color: #fff;
+  text-decoration-color: #666;
+  text-underline-offset: .3em;
+}
+
+a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+}
+
+footer {
+  padding-block: 34px 54px;
+  color: #777;
+  font-size: .82rem;
+}
+
+footer p { margin: 0; }
+
+@media (max-width: 560px) {
+  .site-header,
+  main,
+  footer { width: min(100% - 28px, 920px); }
+
+  .site-header { min-height: 58vh; }
+  section { padding-block: 58px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
